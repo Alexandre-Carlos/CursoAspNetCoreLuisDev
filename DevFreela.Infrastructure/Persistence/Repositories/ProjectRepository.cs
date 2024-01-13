@@ -64,30 +64,30 @@ namespace DevFreela.Infrastructure.Persistence.Repositories
 
         public async Task StartAsync(Project project)
         {
-                //await _dbContext.SaveChangesAsync();
+            await _dbContext.SaveChangesAsync();
 
-            using (var sqlConnection = new SqlConnection(_connectionString))
+            /*using (var sqlConnection = new SqlConnection(_connectionString))
             {
                 sqlConnection.Open();
 
                 var script = "UPDATE Project SET Status = @status, StartedAt = @startedat WHERE Id = @id";
 
                 await sqlConnection.ExecuteAsync(script, new { status = project.Status, startedat = project.StartedAt, id = project.Id});
-            }
+            }*/
         }
 
         public async Task FinishAsync(Project project)
         {
-            //await _dbContext.SaveChangesAsync();
+            await _dbContext.SaveChangesAsync();
 
-            using (var sqlConnection = new SqlConnection(_connectionString))
+            /*using (var sqlConnection = new SqlConnection(_connectionString))
             {
                 sqlConnection.Open();
 
                 var script = "UPDATE Project SET Status = @status, finishedat = @finishedat WHERE Id = @id";
 
                 await sqlConnection.ExecuteAsync(script, new { status = project.Status, finishedat = project.FinishedAt, id = project.Id });
-            }
+            }*/
         }
 
         public async Task AddCommentAsync(ProjectComment comment)
